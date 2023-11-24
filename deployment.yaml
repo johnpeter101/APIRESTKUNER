@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heladeria-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: heladeria
+  template:
+    metadata:
+      labels:
+        app: heladeria
+    spec:
+      containers:
+        - name: heladeria
+          image: juanpedro101/heladeria-app:1.0
+          ports:
+            - containerPort: 3000

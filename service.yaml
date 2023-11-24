@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: heladeria-service
+spec:
+  selector:
+    app: heladeria
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30000
+  type:
+    NodePort
+    # Cambiado a NodePort para exponer en Minikube
